@@ -1,4 +1,4 @@
-# @feedbacks
+# feedbacks
 
 A Claude Code plugin that finds `@feedback` annotations in source code and addresses them by implementing the requested changes.
 
@@ -9,14 +9,14 @@ A Claude Code plugin that finds `@feedback` annotations in source code and addre
 claude plugin marketplace add obsfx/cc-feedback
 
 # Install the plugin
-claude plugin install @feedbacks
+claude plugin install feedbacks
 ```
 
 Or in Claude Code interactive mode:
 
 ```
 /plugin marketplace add obsfx/cc-feedback
-/plugin install @feedbacks
+/plugin install feedbacks
 ```
 
 ## How It Works
@@ -57,13 +57,13 @@ Works with any language's comment syntax:
 
 ## Usage
 
-### Command: `/@feedbacks:address`
+### Command: `/feedbacks:address`
 
 Explicitly scan and address all `@feedback` annotations in the codebase:
 
 ```
-/@feedbacks:address
-/@feedbacks:address src/components/
+/feedbacks:address
+/feedbacks:address src/components/
 ```
 
 - Finds all `@feedback` annotations
@@ -78,7 +78,7 @@ The plugin also includes an agent that notices `@feedback` annotations while wor
 ## Review Workflow
 
 1. Add `@feedback: <desired change>` comments where you want changes
-2. Run `/@feedbacks:address`
+2. Run `/feedbacks:address`
 3. Review the changes and the `@agent-response` summaries
 4. Remove the comment blocks when satisfied
 
