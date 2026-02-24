@@ -1,5 +1,5 @@
 ---
-name: address-feedbacks
+name: feedback-protocol
 description: This skill should be used when the user mentions "@feedback annotations", "address feedbacks", "code feedback comments", "inline feedback", or when encountering @feedback markers in source code during any task. It provides the protocol for finding and addressing @feedback annotations in codebases.
 ---
 

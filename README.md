@@ -87,7 +87,7 @@ The plugin also includes an agent that notices `@feedback` annotations while wor
 | Component | Purpose |
 |-----------|---------|
 | **Command** (`/address`) | Scan and address all feedbacks |
-| **Skill** (`address-feedbacks`) | Protocol knowledge, auto-loaded when relevant |
+| **Skill** (`feedback-protocol`) | Protocol knowledge, auto-loaded when relevant |
 | **Agent** (`feedback-addresser`) | Autonomous worker, proactive detection |
 
 ## License
