@@ -4,24 +4,19 @@ A Claude Code plugin that finds `@feedback` annotations in source code and addre
 
 ## Installation
 
-### 1. Add the marketplace
-
 ```bash
-claude mcp add-marketplace address-feedbacks-marketplace -- npx --yes @anthropic-ai/claude-code-marketplace-server https://raw.githubusercontent.com/obsfx/cc-feedback/main/.claude-plugin/marketplace.json
+# Add the marketplace
+claude plugin marketplace add obsfx/cc-feedback
+
+# Install the plugin
+claude plugin install address-feedbacks
 ```
 
-### 2. Install the plugin
-
-Open Claude Code and run:
+Or in Claude Code interactive mode:
 
 ```
-/install address-feedbacks
-```
-
-### Alternative: Local installation
-
-```bash
-claude --plugin-dir /path/to/cc-address-feedbacks
+/plugin marketplace add obsfx/cc-feedback
+/plugin install address-feedbacks
 ```
 
 ## How It Works
