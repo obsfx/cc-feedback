@@ -1,0 +1,24 @@
+{
+  "name": "address-feedbacks-marketplace",
+  "owner": {
+    "name": "Omercan Balandi",
+    "url": "https://github.com/obsfx"
+  },
+  "metadata": {
+    "description": "Address inline @feedback annotations in source code with AI-powered code changes"
+  },
+  "plugins": [
+    {
+      "name": "address-feedbacks",
+      "source": {
+        "source": "github",
+        "repo": "obsfx/cc-address-feedbacks"
+      },
+      "description": "Finds @feedback annotations in source code and addresses them by implementing the requested code changes. Supports any comment style, adds @agent-response for human review.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Omercan Balandi"
+      }
+    }
+  ]
+}
