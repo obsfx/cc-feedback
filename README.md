@@ -71,6 +71,15 @@ Explicitly scan and address all `@feedback` annotations in the codebase:
 - Implements each change
 - Adds `@agent-response: <summary>` for review
 
+### Command: `/feedbacks:list`
+
+List all `@feedback` annotations with their status and agent responses:
+
+```
+/feedbacks:list
+/feedbacks:list src/components/
+```
+
 ### Command: `/feedbacks:resolve`
 
 Remove all `@feedback` and `@agent-response` annotation lines from the codebase, leaving clean code ready to commit:
@@ -96,6 +105,7 @@ The plugin also includes an agent that notices `@feedback` annotations while wor
 | Component | Purpose |
 |-----------|---------|
 | **Command** (`/address`) | Scan and address all feedbacks |
+| **Command** (`/list`) | List all annotations with status |
 | **Command** (`/resolve`) | Remove all annotation comments for clean commit |
 | **Skill** (`feedback-protocol`) | Protocol knowledge, auto-loaded when relevant |
 | **Agent** (`feedback-addresser`) | Autonomous worker, proactive detection |
