@@ -1,5 +1,5 @@
 {
-  "name": "address-feedbacks",
-  "version": "0.2.0",
+  "name": "@feedbacks",
+  "version": "0.3.0",
   "description": "Finds @feedback annotations in source code and addresses them with code changes"
 }

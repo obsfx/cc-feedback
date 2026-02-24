@@ -9,13 +9,13 @@
   },
   "plugins": [
     {
-      "name": "address-feedbacks",
+      "name": "@feedbacks",
       "source": {
         "source": "github",
         "repo": "obsfx/cc-feedback"
       },
       "description": "Finds @feedback annotations in source code and addresses them by implementing the requested code changes. Supports any comment style, adds @agent-response for human review.",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "author": {
         "name": "Omercan Balandi"
       }

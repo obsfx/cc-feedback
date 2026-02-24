@@ -1,4 +1,4 @@
-# address-feedbacks
+# @feedbacks
 
 A Claude Code plugin that finds `@feedback` annotations in source code and addresses them by implementing the requested changes.
 
@@ -9,14 +9,14 @@ A Claude Code plugin that finds `@feedback` annotations in source code and addre
 claude plugin marketplace add obsfx/cc-feedback
 
 # Install the plugin
-claude plugin install address-feedbacks
+claude plugin install @feedbacks
 ```
 
 Or in Claude Code interactive mode:
 
 ```
 /plugin marketplace add obsfx/cc-feedback
-/plugin install address-feedbacks
+/plugin install @feedbacks
 ```
 
 ## How It Works
@@ -57,13 +57,13 @@ Works with any language's comment syntax:
 
 ## Usage
 
-### Command: `/address-feedbacks:start`
+### Command: `/@feedbacks:address`
 
 Explicitly scan and address all `@feedback` annotations in the codebase:
 
 ```
-/address-feedbacks:start
-/address-feedbacks:start src/components/
+/@feedbacks:address
+/@feedbacks:address src/components/
 ```
 
 - Finds all `@feedback` annotations
@@ -78,7 +78,7 @@ The plugin also includes an agent that notices `@feedback` annotations while wor
 ## Review Workflow
 
 1. Add `@feedback: <desired change>` comments where you want changes
-2. Run `/address-feedbacks:start`
+2. Run `/@feedbacks:address`
 3. Review the changes and the `@agent-response` summaries
 4. Remove the comment blocks when satisfied
 
@@ -86,7 +86,7 @@ The plugin also includes an agent that notices `@feedback` annotations while wor
 
 | Component | Purpose |
 |-----------|---------|
-| **Command** (`/start`) | Explicit scan and address all feedbacks |
+| **Command** (`/address`) | Scan and address all feedbacks |
 | **Skill** (`address-feedbacks`) | Protocol knowledge, auto-loaded when relevant |
 | **Agent** (`feedback-addresser`) | Autonomous worker, proactive detection |
 
