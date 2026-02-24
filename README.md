@@ -2,6 +2,28 @@
 
 A Claude Code plugin that finds `@feedback` annotations in source code and addresses them by implementing the requested changes.
 
+## Installation
+
+### 1. Add the marketplace
+
+```bash
+claude mcp add-marketplace address-feedbacks-marketplace -- npx --yes @anthropic-ai/claude-code-marketplace-server https://raw.githubusercontent.com/obsfx/cc-feedback/main/.claude-plugin/marketplace.json
+```
+
+### 2. Install the plugin
+
+Open Claude Code and run:
+
+```
+/install address-feedbacks
+```
+
+### Alternative: Local installation
+
+```bash
+claude --plugin-dir /path/to/cc-address-feedbacks
+```
+
 ## How It Works
 
 Sprinkle `@feedback` comments in your code to describe desired changes. The plugin finds them, implements the changes, and leaves an `@agent-response` for you to review.
@@ -73,16 +95,6 @@ The plugin also includes an agent that notices `@feedback` annotations while wor
 | **Skill** (`address-feedbacks`) | Protocol knowledge, auto-loaded when relevant |
 | **Agent** (`feedback-addresser`) | Autonomous worker, proactive detection |
 
-## Installation
+## License
 
-### From local directory
-
-```bash
-claude --plugin-dir /path/to/cc-address-feedbacks
-```
-
-### From marketplace
-
-```bash
-/install address-feedbacks
-```
+MIT
