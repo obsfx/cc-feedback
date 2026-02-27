@@ -115,9 +115,9 @@ The plugin also includes an agent that notices `@feedback` annotations while wor
 
 ```mermaid
 stateDiagram-v2
-    [*] --> Unaddressed: developer adds @feedback
-    Unaddressed --> Addressed: agent adds @agent-response
-    Addressed --> Resolved: /feedbacks:resolve removes both
+    [*] --> Unaddressed : developer adds feedback
+    Unaddressed --> Addressed : agent implements and responds
+    Addressed --> Resolved : resolve command removes annotations
     Resolved --> [*]
 ```
 
