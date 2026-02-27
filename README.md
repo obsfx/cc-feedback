@@ -1,6 +1,24 @@
 # feedbacks
 
+The one of the main things I experienced is while doing agentic coding is staying in the loop and not losing the context.
+Also sometimes agents do stupid non-efficient stuff. You need to intervene that early to not fuckup in the near feature.
+It started making much more sense after I read [the brief post from the creator of Django](https://simonwillison.net/2026/Feb/15/cognitive-debt/).
+I always try to find a way to add comments to my agent and pass it to my agent before committing anything to the git.
+So I developed this little plugin for my claude code. It is super simple.
+I added `// @feedback:` annotations using my editor and my agent address and response them.
+Just dead simple and good enough to do review and address the changes.
+
 A Claude Code plugin that finds `@feedback` annotations in source code and addresses them by implementing the requested changes.
+
+## Workflow
+
+```mermaid
+graph LR
+    A["Add @feedback comments"] --> B["/feedbacks:address"]
+    B --> C["Review changes + @agent-response"]
+    C --> D["/feedbacks:resolve"]
+    D --> E["Clean code → commit"]
+```
 
 ## Installation
 
@@ -93,22 +111,25 @@ Remove all `@feedback` and `@agent-response` annotation lines from the codebase,
 
 The plugin also includes an agent that notices `@feedback` annotations while working on other tasks and offers to address them.
 
-## Review Workflow
+## Annotation Lifecycle
 
-1. Add `@feedback: <desired change>` comments where you want changes
-2. Run `/feedbacks:address`
-3. Review the changes and the `@agent-response` summaries
-4. Run `/feedbacks:resolve` to clean up annotations and commit
+```mermaid
+stateDiagram-v2
+    [*] --> Unaddressed: developer adds @feedback
+    Unaddressed --> Addressed: agent adds @agent-response
+    Addressed --> Resolved: /feedbacks:resolve removes both
+    Resolved --> [*]
+```
 
 ## Components
 
 | Component | Purpose |
 |-----------|---------|
-| **Command** (`/address`) | Scan and address all feedbacks |
-| **Command** (`/list`) | List all annotations with status |
-| **Command** (`/resolve`) | Remove all annotation comments for clean commit |
-| **Skill** (`feedback-protocol`) | Protocol knowledge, auto-loaded when relevant |
-| **Agent** (`feedback-addresser`) | Autonomous worker, proactive detection |
+| `/feedbacks:address` | Scan and implement all feedbacks |
+| `/feedbacks:list` | List all annotations with status |
+| `/feedbacks:resolve` | Remove annotation comments for clean commit |
+| `feedback-protocol` skill | Protocol knowledge, auto-loaded when relevant |
+| `feedback-addresser` agent | Autonomous worker, proactive detection |
 
 ## License
 
